@@ -1,39 +1,43 @@
-# 📄 Multimodal RAG System (Gemini + CLIP + FAISS)
-
-This project implements a **Multimodal Retrieval-Augmented Generation (RAG)** pipeline using:
-
-- **Google Gemini** for reasoning and responses  
-- **CLIP (Hugging Face)** for text embeddings  
-- **FAISS** for vector similarity search  
-- **PyMuPDF** for PDF document processing  
-- **LangChain** for orchestration  
-
-The system allows users to upload a PDF document, embed its contents, store them in a vector database, and ask natural language questions about the document.
-
+##🎥 YouTube RAG Assistant
 ---
 
-## 🚀 Features
+A Streamlit-based Retrieval-Augmented Generation (RAG) application that allows users to ask questions about a YouTube video and get AI-generated answers based only on the video transcript.
 
-- PDF document ingestion  
-- CLIP-safe text chunking (handles token limits)  
-- Vector search with FAISS  
-- Gemini-powered question answering  
-- Fully local vector storage  
-- Clean, modular, and extensible codebase  
+The app fetches subtitles from YouTube, embeds the transcript using Hugging Face models, stores them in FAISS, and uses Google Gemini to generate accurate answers.
 
+
+🚀 Features
 ---
 
-## 🧱 Tech Stack
+📜 Fetches YouTube video transcripts automatically
 
-- Python 3.11  
-- LangChain  
-- Google Gemini API  
-- Hugging Face Transformers (CLIP)  
-- FAISS  
-- PyMuPDF  
-- Torch  
+🔍 Semantic search using FAISS vector database
 
+🧠 AI-powered answers using Google Gemini
+
+🧩 Text chunking for long transcripts
+
+⚡ Fast and lightweight Streamlit UI
+
+❌ Prevents hallucinations by answering only from transcript content
+
+
+🧱 Tech Stack
 ---
+
+- Python 3.11
+
+- Streamlit
+
+- LangChain
+
+- Google Gemini API
+
+- Hugging Face Embeddings
+
+- FAISS
+
+YouTube Transcript Loader
 
 ## 🔐 API Key Disclaimer (MANDATORY)
 
@@ -49,9 +53,40 @@ This project requires a **Google Gemini API key**.
 
 ## 🛠️ Setup Instructions
 
-### 1️⃣ Clone the Repository
+ 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
+```
+
+2️⃣ Create Virtual Environment
+```bash
+python -m venv venv
+```
+ Activate Virtual Environment (Windows)
+ ```bash
+venv\Scripts\activate
+```
+
+3️⃣ Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+4️⃣ Configure Environment Variables
+
+Create a .env file in the root directory and add the following:
+```bash
+GOOGLE_API_KEY=your_gemini_api_key_here
+HUGGINGFACEHUB_API_TOKEN=your_hugging_face_api_key_here
+```
+
+▶️ Run the Application
+```bash
+streamlit run file_name.py
+```
+
+
+
 
